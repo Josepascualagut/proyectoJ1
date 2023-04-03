@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Escuela [
+<!ELEMENT Escuela (id, nombreDeLaEscuela, fundacion, Alumnos*)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT nombreDeLaEscuela (#PCDATA)>
+<!ELEMENT fundacion (#PCDATA)>
+<!ELEMENT Alumnos (id, Escuela, imagen, nombreAlumno, edad, numeroCarnet, posicion?)>
+<!ELEMENT imagen (#PCDATA)>
+<!ELEMENT nombreAlumno (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT numeroCarnet (#PCDATA)>
+<!ELEMENT posicion (#PCDATA)>
+]>
+
+<Escuela>
+    <id>E1</id>
+    <nombreDeLaEscuela>Escuela Hogwarts de Magia y Hechicería</nombreDeLaEscuela>
+    <fundacion>1802</fundacion>
+    <Alumnos>
+        <id>A1</id>
+        <Escuela>E1</Escuela>
+        <imagen>https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/harry-potter_/4661804-1-esl-ES/Harry-Potter_.jpg?resize=980:*</imagen>
+        <nombreAlumno>HARRY POTTER</nombreAlumno>
+        <edad>11</edad>
+        <numeroCarnet>42004</numeroCarnet>
+    </Alumnos>
+    <Alumnos>
+        <id>A2</id>
+        <Escuela>E1</Escuela>
+        <imagen>https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/ron-weasley_/4661779-1-esl-ES/Ron-Weasley_.jpg?resize=550:*</imagen>
+        <edad>12</edad>
+        <nombreAlumno>RON WEASLEY</nombreAlumno>
+        <numeroCarnet>41458</numeroCarnet>
+    </Alumnos>
+    <Alumnos>
+        <id>A3</id>
+        <Escuela>E1</Escuela>
+        <imagen>https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/hermione-granger_/4661799-1-esl-ES/Hermione-Granger_.jpg?resize=550:*</imagen>
+        <nombreAlumno>HERMIONE GRANGER </nombreAlumno>
+        <edad>12</edad>
+        <posicion>Alumno</posicion>
+        <numeroCarnet>42000</numeroCarnet>
+    </Alumnos>
+    <Alumnos>
+        <id>A4</id>
+        <Escuela>E1</Escuela>
+        <imagen>https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/draco-malfoy_/4661784-1-esl-ES/Draco-Malfoy_.jpg?resize=550:*</imagen>
+        <nombreAlumno>DRACO MALFOY</nombreAlumno>
+        <edad>13</edad>
+        <posicion>Alumno</posicion>
+        <numeroCarnet>41253</numeroCarnet>
+    </Alumnos>
+</Escuela>

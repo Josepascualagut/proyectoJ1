@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "escuelas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nombreEscuela": {
+            "type": "string"
+          },
+          "fundacion": {
+            "type": "string"
+          },
+          "alumnos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "escuela": {
+                  "type": "string"
+                },
+                "imagen": {
+                  "type": "string"
+                },
+                "nombreAlumno": {
+                  "type": "string"
+                },
+                "edad": {
+                  "type": "string"
+                },
+                "posicion": {
+                  "type": "string"
+                },
+                "numeroCarnet": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "escuela",
+                "imagen",
+                "nombreAlumno",
+                "edad",
+                "posicion",
+                "numeroCarnet"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "nombreEscuela",
+          "fundacion",
+          "alumnos"
+        ]
+      }
+    }
+  },
+  "required": [
+    "escuelas"
+  ]
+}

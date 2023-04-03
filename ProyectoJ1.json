@@ -1,0 +1,45 @@
+{
+  "Escuela": [
+    {
+      "id": "E1",
+      "nombreDeLaEscuela": "Escuela Hogwarts de Magia y Hechicería",
+      "fundacion": "1802",
+      "Alumnos": [
+        {
+          "id": "A1",
+          "Escuela": "E1",
+          "imagen": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/harry-potter_/4661804-1-esl-ES/Harry-Potter_.jpg?resize=980:*",
+          "nombreAlumno": "HARRY POTTER",
+          "edad": "11",
+          "numeroCarnet": "42004"
+        },
+        {
+          "id": "A2",
+          "Escuela": "E1",
+          "imagen": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/ron-weasley_/4661779-1-esl-ES/Ron-Weasley_.jpg?resize=550:*",
+          "edad": "12",
+          "nombreAlumno": "RON WEASLEY",
+          "numeroCarnet": "41458"
+        },
+        {
+          "id": "A3",
+          "Escuela": "E1",
+          "imagen": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/hermione-granger_/4661799-1-esl-ES/Hermione-Granger_.jpg?resize=550:*",
+          "nombreAlumno": "HERMIONE GRANGER ",
+          "edad": "12",
+          "posicion": "Alumno",
+          "numeroCarnet": "42000"
+        },
+        {
+          "id": "A4",
+          "Escuela": "E1",
+          "imagen": "https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-personajes-clave-de-harry-potter/draco-malfoy_/4661784-1-esl-ES/Draco-Malfoy_.jpg?resize=550:*",
+          "nombreAlumno": "DRACO MALFOY",
+          "edad": "13",
+          "posicion": "Alumno",
+          "numeroCarnet": "41253"
+        }
+      ]
+    }
+  ]
+}
