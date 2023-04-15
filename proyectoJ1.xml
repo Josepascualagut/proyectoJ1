@@ -14,7 +14,7 @@
 
 <Escuela>
     <id>E1</id>
-    <nombreDeLaEscuela>Escuela Hogwarts de Magia y Hechicería</nombreDeLaEscuela>
+    <nombreDeLaEscuela>Escuela Hogwarts de Magia y Hechiceria</nombreDeLaEscuela>
     <fundacion>1802</fundacion>
     <Alumnos>
         <id>A1</id>
