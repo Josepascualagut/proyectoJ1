@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de JSON + jQuery + JsRender</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.jsviews.com/download/jsviews.min.js"></script>
+</head>
+<body>
+    <div id="escuelaContainer"></div>
+
+    <script type="text/javascript">
+        // XML con la estructura de datos
+        var xml = `<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE Escuela [
+        <!ELEMENT Escuela (id, nombreDeLaEscuela, fundacion, Superheroes*)>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT nombreDeLaEscuela (#PCDATA)>
+        <!ELEMENT fundacion (#PCDATA)>
+        <!ELEMENT Superheroes (id, Escuela, imagen, nombreSuperheroe, edad, numeroIdentificacion, poderes?)>
+        <!ELEMENT imagen (#PCDATA)>
+        <!ELEMENT nombreSuperheroe (#PCDATA)>
+        <!ELEMENT edad (#PCDATA)>
+        <!ELEMENT numeroIdentificacion (#PCDATA)>
+        <!ELEMENT poderes (#PCDATA)>
+        ]>
+        <Escuela>
+            <id>E1</id>
+            <nombreDeLaEscuela>Escuela de Superheroes</nombreDeLaEscuela>
+            <fundacion>2020</fundacion>
+            <Superheroes>
+                <id>S1</id>
+                <Escuela>E1</Escuela>
+                <imagen>https://upload.wikimedia.org/wikipedia/en/d/d6/Superman_Man_of_Steel.jpg</imagen>
+                <nombreSuperheroe>SUPERMAN</nombreSuperheroe>
+                <edad>32</edad>
+                <numeroIdentificacion>12345</numeroIdentificacion>
+            </Superheroes>
+            <Superheroes>
+                <id>S2</id>
+                <Escuela>E1</Escuela>
+                <imagen>https://static.wikia.nocookie.net/marvelcinematicuniverse/images/3/35/IronMan-EndgameProfile.jpg/revision/latest/scale-to-width-down/1000?cb=20190423175213</imagen>
+                <nombreSuperheroe>IRON MAN</nombreSuperheroe>
+                <edad>40</edad>
+                <numeroIdentificacion>67890</numeroIdentificacion>
+            </Superheroes>
+            <Superheroes>
+                <id>S3</id>
+                <Escuela>E1</Escuela>
+                <imagen>https://www.refinery29.com/images/8987954.jpg?format=webp&width=340&height=408&quality=85</imagen>
+                <nombreSuperheroe>WONDER WOMAN</nombreSuperheroe>
+                <edad>500</edad>
+                <poderes>Lazo de la verdad, fuerza sobrehumana, vuelo</poderes>
+                <numeroIdentificacion>54321</numeroIdentificacion>
+            </Superheroes>
+            <Superheroes>
+                <id>S4</id>
+                <Escuela>E1</Escuela>
+                <imagen>https://insidethemagic.net/wp-content/uploads/2022/03/amazing-spider-man-800x400.jpg</imagen>
+                <nombreSuperheroe>SPIDER-MAN</nombreSuperheroe>
+                <edad>20</edad>
+                <poderes>Agilidad, fuerza proporcional de una aranya, sentido aracnido</poderes>
+                <numeroIdentificacion>09876</numeroIdentificacion>
+            </Superheroes>
+        </Escuela>`;
+
+        // Parsear el XML
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(xml, "application/xml");
+
+        // Obtener los datos del XML
+        var idEscuela = xmlDoc.querySelector("Escuela > id").textContent;
+        var nombreEscuela = xmlDoc.querySelector("Escuela > nombreDeLaEscuela").textContent;
+        var fundacionEscuela = xmlDoc.querySelector("Escuela > fundacion").textContent;
+
+        var superheroes = xmlDoc.querySelectorAll("Superheroes");
+        var data = [];
+
+        // Iterar a traves de los superheroes y obtener sus datos
+        for (var i = 0; i < superheroes.length; i++) {
+            var idSuperheroe = superheroes[i].querySelector("id").textContent;
+            var imagenSuperheroe = superheroes[i].querySelector("imagen").textContent;
+            var nombreSuperheroe = superheroes[i].querySelector("nombreSuperheroe").textContent;
+            var edadSuperheroe = superheroes[i].querySelector("edad").textContent;
+            var numeroIdentificacionSuperheroe = superheroes[i].querySelector("numeroIdentificacion").textContent;
+            var poderesSuperheroe = superheroes[i].querySelector("poderes") ? superheroes[i].querySelector("poderes").textContent : "";
+
+            data.push({
+                id: idSuperheroe,
+                imagen: imagenSuperheroe,
+                nombre: nombreSuperheroe,
+                edad: edadSuperheroe,
+                numeroIdentificacion: numeroIdentificacionSuperheroe,
+                poderes: poderesSuperheroe
+            });
+        }
+
+        // Renderizar los datos en el contenedor
+        $("#escuelaContainer").html(
+            `<h1>Escuela de Superheroes</h1>
+            <p>ID: ${idEscuela}</p>
+            <p>Nombre: ${nombreEscuela}</p>
+            <p>Fecha de fundacion: ${fundacionEscuela}</p>
+            <h2>Superheroes</h2>
+            <ul id="superheroesList"></ul>`
+        );
+
+        // Renderizar cada superheroe en la lista
+        var template = $.templates("#superheroeTemplate");
+        template.link("#superheroesList", data);
+    </script>
+
+    <!-- Plantilla para renderizar cada superheroe -->
+    <script id="superheroeTemplate" type="text/x-jsrender">
+        <li>
+            <img src="{{:imagen}}" alt="{{:nombre}}" width="100">
+            <p><strong>{{:nombre}}</strong></p>
+            <p>Edad: {{:edad}}</p>
+            <p>Numero de identificacion: {{:numeroIdentificacion}}</p>
+            <p>Poderes: {{:poderes}}</p>
+        </li>
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,43 @@
+{
+  "Escuela": {
+    "id": "E1",
+    "nombreDeLaEscuela": "Escuela de Superheroes",
+    "fundacion": "2020",
+    "Superheroes": [
+      {
+        "id": "S1",
+        "Escuela": "E1",
+        "imagen": "https://upload.wikimedia.org/wikipedia/en/d/d6/Superman_Man_of_Steel.jpg",
+        "nombreSuperheroe": "SUPERMAN",
+        "edad": "32",
+        "numeroIdentificacion": "12345"
+      },
+      {
+        "id": "S2",
+        "Escuela": "E1",
+        "imagen": "https://static.wikia.nocookie.net/marvelcinematicuniverse/images/3/35/IronMan-EndgameProfile.jpg/revision/latest/scale-to-width-down/1000?cb=20190423175213",
+        "nombreSuperheroe": "IRON MAN",
+        "edad": "40",
+        "numeroIdentificacion": "67890"
+      },
+      {
+        "id": "S3",
+        "Escuela": "E1",
+        "imagen": "https://www.refinery29.com/images/8987954.jpg?format=webp&width=340&height=408&quality=85",
+        "nombreSuperheroe": "WONDER WOMAN",
+        "edad": "500",
+        "poderes": "Lazo de la verdad, fuerza sobrehumana, vuelo",
+        "numeroIdentificacion": "54321"
+      },
+      {
+        "id": "S4",
+        "Escuela": "E1",
+        "imagen": "https://insidethemagic.net/wp-content/uploads/2022/03/amazing-spider-man-800x400.jpg",
+        "nombreSuperheroe": "SPIDER-MAN",
+        "edad": "20",
+        "poderes": "Agilidad, fuerza proporcional de aranya, sentido aracnido",
+        "numeroIdentificacion": "09876"
+      }
+    ]
+  }
+}

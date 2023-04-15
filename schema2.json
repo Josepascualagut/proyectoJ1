@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "Escuela": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "nombreDeLaEscuela": {
+          "type": "string"
+        },
+        "fundacion": {
+          "type": "string"
+        },
+        "Superheroes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "Escuela": {
+                "type": "string"
+              },
+              "imagen": {
+                "type": "string"
+              },
+              "nombreSuperheroe": {
+                "type": "string"
+              },
+              "edad": {
+                "type": "string"
+              },
+              "poderes": {
+                "type": "string"
+              },
+              "numeroIdentificacion": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "Escuela",
+              "imagen",
+              "nombreSuperheroe",
+              "edad",
+              "numeroIdentificacion"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "nombreDeLaEscuela",
+        "fundacion",
+        "Superheroes"
+      ]
+    }
+  },
+  "required": [
+    "Escuela"
+  ]
+}
+
+  
